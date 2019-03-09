@@ -21,11 +21,8 @@ function getAllPermutations(string) {
 
 function main(){
 
-    //var inputString1 = 'SomeKingOfString'
     var inputString2 = 'ABC'
-
-    //console.log(getAllPermutations(inputString1))
-    console.log('------------------')
+    
     console.log(getAllPermutations(inputString2))
 }
 
