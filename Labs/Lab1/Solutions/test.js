@@ -1,20 +1,8 @@
-function Animal (name) {
-  this.name = name;  
-}
-Animal.prototype.speak = function () {
-  console.log(this.name + ' makes a noise.');
-}
+let obj = { a: 4, b: 0.5 , c: 0.35, d: 5 };
 
-class Dog extends Animal {
-    constructor(){
-    super();
-}
+let arr = Object.values(obj);
+let keys = Object.keys(obj);
+let min = Math.min(...arr);
+let max = Math.max(...arr);
 
-  speak() {
-    super.speak();
-    console.log(this.name + ' barks.');
-  }
-}
-
-dog = new Dog()
-dog.speak()
+console.log( `Min value: ${keys[arr.indexOf(min)]}, max value: ${keys[arr.indexOf(max)]}`);

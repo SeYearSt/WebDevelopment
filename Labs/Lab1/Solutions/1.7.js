@@ -143,29 +143,33 @@ class Manager{
             trainsCount[ticket.train.name] += 1
         })
 
-        let maxKey = Object.keys(trainsCount)[0]
-        let maxCount = trainsCount[maxKey]
+        // console.log(trainsCount)
 
-        console.log(trainsCount)
-        console.log(maxKey)
-        console.log(maxCount)
+        let values = Object.values(trainsCount);
+        let keys = Object.keys(trainsCount);
+        let max = Math.max(...values);
 
-
-        for (var key in trainsCount) {
-            // check if the property/key is defined in the object itself, not in parent
-            if (trainsCount.hasOwnProperty(key)) { 
-                if (trainsCount[key] > maxCount){
-                    maxCount = trainsCount
-                    maxKey = key
-                }
-                //console.log(trainsCount[key])  
-            }
-        }
-        return maxKey
+        return keys[values.indexOf(max)]
     }
 
     findNotCommonTrain(){
+        let trainsCount = {}
+        
+        this.trains.forEach(function(train){
+            trainsCount[train.name] = 0
+        })
 
+        this.saledTickets.forEach(function(ticket){
+            trainsCount[ticket.train.name] += 1
+        })
+
+        // console.log(trainsCount)
+
+        let values = Object.values(trainsCount);
+        let keys = Object.keys(trainsCount);
+        let min = Math.min(...values);
+
+        return keys[values.indexOf(min)]
     }
 }
 
@@ -207,7 +211,8 @@ manager.buyTicket(passengers[1], tickets[6])
 console.log(manager.saledTickets)
 console.log('----------Most common---------')
 console.log(manager.findCommonTrain())
-
+console.log('----------Most not common---------')
+console.log(manager.findNotCommonTrain())
 // manager.saleTicket(passengers[1])
 
 
