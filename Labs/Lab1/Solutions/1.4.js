@@ -17,6 +17,7 @@ function getMostCommonNumber(numbers){
     Object.keys(counted).forEach(function(key){
         if (i == 0){
             max = counted[key]
+            commonKey = key
         }
         if (counted[key] > max){
             max = counted[key]
@@ -33,4 +34,4 @@ let randomArray = getRandomArray(numberCount, scale)
 console.log(randomArray)
 let res = getMostCommonNumber(randomArray)
 console.log(res[0])
-//console.log(res[1])
+console.log(res[1])

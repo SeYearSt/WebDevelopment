@@ -1,8 +1,8 @@
 'use strict'
 
-var readline = require('readline');
+let readline = require('readline');
 
-var rl = readline.createInterface({
+let rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
@@ -17,7 +17,7 @@ return parseInt(Math.sqrt(2*Math.PI*n) * Math.pow((n/Math.E), n)*Math.exp(1/(12*
 }
 
 rl.question('Enter a number: ', function (x) {
-    var num = parseFloat(x);
+    let num = parseFloat(x);
 
     console.log(factorial(num))
 
