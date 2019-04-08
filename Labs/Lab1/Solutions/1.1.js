@@ -1,7 +1,10 @@
 'use strict'
 
-var str = 'Temp test string'
+let testStrings = ['My Bonnie lies over the ocean',
+    'My Bonnie lies over the sea',
+    'My Bonnie lies over the ocean',
+    'Oh, bring back my Bonnie to me']
 
-var words = str.split(' ')
-
-console.log(words)
+testStrings.forEach(function(testString){
+    console.log(testString.split(' '))
+})
