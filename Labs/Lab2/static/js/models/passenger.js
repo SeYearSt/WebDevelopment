@@ -8,7 +8,6 @@ class Passenger extends BaseModel { // eslint-disable-line no-unused-vars, no-un
     var passenger = this.FindById(id)
 
     if (typeof passenger != 'undefined'){
-        console.log(this.Select())
         this.removePassenger(id)
         passenger.name = newName
         this.Create(passenger)

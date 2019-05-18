@@ -2,7 +2,7 @@
 
 const passengerModel = new Passenger() // eslint-disable-line no-undef
 function initAddForm () {
-  const form = window.document.querySelector('#shop-add-form')
+  const form = window.document.querySelector('#passenger-add-form')
   if(form != null){
     form.addEventListener('submit', function (e) {
       e.preventDefault()
@@ -25,7 +25,7 @@ function initAddForm () {
 
 function initEditForm () {
 
-  var form = document.querySelector('#shop-edit-form')
+  var form = document.querySelector('#passenger-edit-form')
   if(form != null){
       form.addEventListener('submit', function(e){
       e.preventDefault();
@@ -44,7 +44,7 @@ function initEditForm () {
 }
 
 function initRemoveForm () {
-  var form = document.querySelector('#shop-remove-form')
+  var form = document.querySelector('#passenger-remove-form')
   if (form != null){
     form.addEventListener('submit', function(e){
       e.preventDefault()
@@ -66,7 +66,7 @@ function initRemoveForm () {
 }
 
 function initList () {
-  window.jQuery('#shop-list').DataTable({
+  window.jQuery('#passenger-list').DataTable({
     data: passengerModel.Select(),
     columns: [
       { title: 'ID', data: 'id' },
@@ -76,7 +76,7 @@ function initList () {
 }
 
 function initListEvents () {
-  document.addEventListener('shopsListDataChanged', function (e) {
+  document.addEventListener('passengersListDataChanged', function (e) {
     const dataTable = window.jQuery('#shop-list').DataTable()
 
     dataTable.clear()
