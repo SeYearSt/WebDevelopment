@@ -1,5 +1,6 @@
-class Train{
-    constructor(name){
-        this.name = name
+class Train extends BaseModel{
+    constructor(){
+        super("trains")
+        this.fields = this.fields.concat("name", "capacity")
     }
 }
