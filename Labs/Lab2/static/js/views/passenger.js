@@ -1,22 +1,46 @@
 'use strict'
 
 const passengerModel = new Passenger() // eslint-disable-line no-undef
-
 function initAddForm () {
   const form = window.document.querySelector('#shop-add-form')
-  form.addEventListener('submit', function (e) {
-    e.preventDefault()
-
-    const formData = new FormData(e.target)
-    const shopData = {}
-    formData.forEach((value, key) => {
-      shopData[key] = value
+  if(form != null){
+    form.addEventListener('submit', function (e) {
+      e.preventDefault()
+  
+      const formData = new FormData(e.target)
+      const shopData = {}
+      formData.forEach((value, key) => {
+        shopData[key] = value
+      })
+  
+      passengerModel.Create(shopData)
+  
+      e.target.reset()
+  
+      window.location.replace("/passenger")
     })
+  }
+  
+}
 
-    passengerModel.Create(shopData)
+function initEditForm () {
 
-    e.target.reset()
-  })
+  var form = document.querySelector('#shop-edit-form');
+  if(form != null){
+      form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const formData = new FormData(e.target)
+      const passengerData = {}
+      formData.forEach((value, key) => {
+        passengerData[key] = value
+      })
+
+       passengerModel.renamePassenger(parseInt(passengerData.Id), passengerData.name)
+
+      window.location.replace("/passenger")
+      })
+  }
 }
 
 function initList () {
@@ -41,6 +65,7 @@ function initListEvents () {
 
 window.addEventListener('DOMContentLoaded', e => {
   initAddForm()
+  initEditForm()
   initList()
   initListEvents()
 })
