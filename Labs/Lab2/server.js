@@ -17,8 +17,17 @@ app.get('/', function (request, response) {
 })
 
 app.get('/passenger', function (request, response) {
-  response.render('pages/passenger', { title: 'Shop1' })
+  response.render('pages/passenger', { title: 'Passenger' })
 })
+
+app.get('/passenger/add', function (request, response) {
+  response.render('pages/passengerAdd', { title: 'Passenger Add' })
+})
+
+app.get('/passenger/edit', function (request, response) {
+  response.render('pages/passengerEdit', { title: 'Passenger Edit' })
+})
+
 
 app.get('/shop', function (request, response) {
   response.render('pages/shop', { title: 'Shop' })
