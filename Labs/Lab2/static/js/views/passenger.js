@@ -25,7 +25,7 @@ function initAddForm () {
 
 function initEditForm () {
 
-  var form = document.querySelector('#shop-edit-form');
+  var form = document.querySelector('#shop-edit-form')
   if(form != null){
       form.addEventListener('submit', function(e){
       e.preventDefault();
@@ -40,6 +40,28 @@ function initEditForm () {
 
       window.location.replace("/passenger")
       })
+  }
+}
+
+function initRemoveForm () {
+  var form = document.querySelector('#shop-remove-form')
+  if (form != null){
+    form.addEventListener('submit', function(e){
+      e.preventDefault()
+
+      const formData = new FormData(e.target)
+
+      const passengerData = {}
+      formData.forEach((value, key) => {
+        passengerData[key] = value
+      })
+      
+      if (typeof passengerData.Id != 'undefined'){
+        passengerModel.removePassenger(parseInt(passengerData.Id))
+      }
+
+      window.location.replace("/passenger")
+    })
   }
 }
 
@@ -66,6 +88,7 @@ function initListEvents () {
 window.addEventListener('DOMContentLoaded', e => {
   initAddForm()
   initEditForm()
+  initRemoveForm()
   initList()
   initListEvents()
 })

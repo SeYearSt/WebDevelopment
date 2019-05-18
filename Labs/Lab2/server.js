@@ -28,9 +28,8 @@ app.get('/passenger/edit', function (request, response) {
   response.render('pages/passengerEdit', { title: 'Passenger Edit' })
 })
 
-
-app.get('/shop', function (request, response) {
-  response.render('pages/shop', { title: 'Shop' })
+app.get('/passenger/remove', function (request, response) {
+  response.render('pages/passengerRemove', { title: 'Passenger Remove' })
 })
 
 // запускаємо аплікацію

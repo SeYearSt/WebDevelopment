@@ -1,33 +1,6 @@
 Passenger = require("./passenger");
 Shop = require("./shop.js");
 
-function addPassenger(collection, passenger){
-    collection.push(passenger);
-}
-
-function renamePassenger(collection, index, newName){
-    if (index >= collection.length || index < 0){
-        throw new Error("passenger's index cannot be less than number of passengers and must be greate or equal to 0");
-    }
-    collection[index].name = newName
-}
-
-function removePassenger(collection, index){
-     if (index >= collection.length || index < 0){
-        throw new Error("passenger's index cannot be less than number of passengers and must be greate or equal to 0");        
-    }
-   collection.splice(index, 1);
-}
-
-function findPassenger(collection, name){
-    let foundPassenger = -1
-    this.passengers.forEach(function(passenger){
-        if (passenger.name == name){
-            foundPassenger = passenger
-        }
-    })
-    return foundPassenger
-}
 
 // addTrain(train){
 //     this.trains.push(train)

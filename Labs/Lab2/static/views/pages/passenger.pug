@@ -5,7 +5,10 @@ block prepend styles
 
 block content
   div(class='breadcrumb')
-    li= title
+    a(href='/passenger/add') PassengerAdd  
+    a(href='/passenger/edit') PassengerEdit  
+    a(href='/passenger/remove') PassengerRemove  
+  
   form(id='shop-add-form' name='shop-add-form' class='form-inline' action='')
     div.list-wrapper
       table(id='shop-list')

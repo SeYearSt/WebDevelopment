@@ -1,0 +1,22 @@
+extends ../layout.pug
+
+block prepend styles
+  link(rel='stylesheet' href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')
+
+block content
+  div(class='breadcrumb')
+    li= title
+  form(id='shop-remove-form' name='shop-remove-form' class='form-inline' action='')
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='Id') Id
+      div(class='col-md-9')
+        input(id='Id' name='Id' value='' class='form-control')
+    div(class='form-group')
+      div(class='col-md-12')
+        button(type='submit' class='btn btn-danger') Edit
+block append scripts
+  script(src='/static/js/models/passenger.js')
+  script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
+  script(src='/static/js/views/passenger.js')
+      

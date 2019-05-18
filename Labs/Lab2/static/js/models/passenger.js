@@ -22,13 +22,13 @@ class Passenger extends BaseModel { // eslint-disable-line no-unused-vars, no-un
      this.Commit(collection)
 }
 
- findPassenger(collection, name){
-    let foundPassenger = -1
+ findPassenger(name){
+   var passengers = []
     this.passengers.forEach(function(passenger){
         if (passenger.name == name){
-            foundPassenger = passenger
+            passengers.concat(passenger)
         }
     })
-    return foundPassenger
+    return passengers
  }
 }
