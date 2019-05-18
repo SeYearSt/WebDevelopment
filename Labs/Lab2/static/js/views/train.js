@@ -34,14 +34,14 @@ function initEditForm () {
       e.preventDefault();
 
       const formData = new FormData(e.target)
-      const passengerData = {}
+      const trainData = {}
       formData.forEach((value, key) => {
-        passengerData[key] = value
+        trainData[key] = value
       })
 
-       passengerModel.renamePassenger(parseInt(passengerData.Id), passengerData.name)
+       trainModel.renameTrain(parseInt(trainData.Id), trainData.name, parseInt(trainData.capacity))
 
-      window.location.replace("/passenger")
+      window.location.replace("/train")
       })
   }
 }
@@ -54,16 +54,16 @@ function initRemoveForm () {
 
       const formData = new FormData(e.target)
 
-      const passengerData = {}
+      const trainData = {}
       formData.forEach((value, key) => {
-        passengerData[key] = value
+        trainData[key] = value
       })
       
-      if (typeof passengerData.Id != 'undefined'){
-        passengerModel.removePassenger(parseInt(passengerData.Id))
+      if (typeof trainData.Id != 'undefined'){
+        trainModel.removeTrain(parseInt(trainData.Id))
       }
 
-      window.location.replace("/passenger")
+      window.location.replace("/train")
     })
   }
 }
@@ -91,8 +91,8 @@ function initListEvents () {
 
 window.addEventListener('DOMContentLoaded', e => {
   initAddForm()
-  // initEditForm()
-  // initRemoveForm()
+  initEditForm()
+  initRemoveForm()
   initList()
   // initListEvents()
 })
