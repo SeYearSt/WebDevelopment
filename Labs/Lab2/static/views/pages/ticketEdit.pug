@@ -5,9 +5,9 @@ block prepend styles
 
 block content
   div(class='breadcrumb')
-    a(href='/passenger/add') PassengerAdd  
-    a(href='/passenger/edit') PassengerEdit  
-    a(href='/passenger/remove') PassengerRemove  
+    a(href='/ticket/add') Ticket Add  
+    a(href='/ticket/edit') Ticket Edit  
+    a(href='/ticket/remove') Ticket Remove  
   
   form(id='ticket-edit-form' name='ticket-edit-form' class='form-inline' action='')
     div(class="form-group")
@@ -22,9 +22,9 @@ block content
         input(id="trainId" name="trainId" value="" class="form-control")
     div(class="form-group")
       div(class="col-md-3")
-        label(for="passengerId") Passenger Id
+        label(for="passengerName") Passenger Name
       div(class="col-md-9")
-        input(id="passengerId" name="passengerId" value="" class="form-control")
+        input(id="passengerName" name="passengerName" value="" class="form-control")
       div(class='form-group')
         div(class='col-md-12')
           button(type='submit' class='btn btn-primary') Edit

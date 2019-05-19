@@ -31,39 +31,39 @@ function initEditForm () {
       e.preventDefault();
 
       const formData = new FormData(e.target)
-      const ticketData = {}
+      const ticket = {}
       formData.forEach((value, key) => {
-        ticketData[key] = value
+        ticket[key] = value
       })
 
-      ticketModel.editTicket(parseInt(ticketData.Id), ticketData.passengerName, parseInt(ticketData.trainId))
+      ticketModel.editTicket(parseInt(ticket.Id), ticket.passengerName, ticket.trainId)
 
       window.location.replace("/ticket")
       })
   }
 }
 
-// function initRemoveForm () {
-//   var form = document.querySelector('#train-remove-form')
-//   if (form != null){
-//     form.addEventListener('submit', function(e){
-//       e.preventDefault()
+function initRemoveForm () {
+  var form = document.querySelector('#ticket-remove-form')
+  if (form != null){
+    form.addEventListener('submit', function(e){
+      e.preventDefault()
 
-//       const formData = new FormData(e.target)
+      const formData = new FormData(e.target)
 
-//       const trainData = {}
-//       formData.forEach((value, key) => {
-//         trainData[key] = value
-//       })
+      const ticket = {}
+      formData.forEach((value, key) => {
+        ticket[key] = value
+      })
       
-//       if (typeof trainData.Id != 'undefined'){
-//         trainModel.removeTrain(parseInt(trainData.Id))
-//       }
+      if (typeof ticket.id != 'undefined'){
+        ticketModel.removeTicket(parseInt(ticket.id))
+      }
 
-//       window.location.replace("/train")
-//     })
-//   }
-// }
+      window.location.replace("/ticket")
+    })
+  }
+}
 
 function initList () {
   window.jQuery('#ticket-list').DataTable({
@@ -89,7 +89,7 @@ function initListEvents () {
 window.addEventListener('DOMContentLoaded', e => {
   initAddForm()
   initEditForm()
-//   initRemoveForm()
+  initRemoveForm()
   initList()
 //   // initListEvents()
 })
