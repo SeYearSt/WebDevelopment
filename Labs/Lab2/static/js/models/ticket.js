@@ -1,7 +1,7 @@
 
 class Ticket extends BaseModel{
-    constructor(){
-        super("tickets")
+    constructor(collectionName){
+        super(collectionName)
         this.fields = this.fields.concat(["passengerName", "trainId"])
     }
 
