@@ -1,0 +1,31 @@
+extends ../layout.pug
+
+block prepend styles
+  link(rel='stylesheet' href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')
+
+block content
+  div(class='breadcrumb')
+    a(href='/ticket/add') Ticket Add  
+    a(href='/ticket/edit') Ticket Edit  
+    a(href='/ticket/remove') Ticket Remove  
+
+  form(id='ticket-add-form' name='ticket-add-form' class='form-inline' action='')
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='pName') Passenger Name
+      div(class='col-md-9')
+        input(id='pName' name='passengerName' value='' class='form-control')  
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='trainId') Train Id
+      div(class='col-md-9')
+        input(id='trainId' name='trainId' value='' class='form-control')  
+    div(class='form-group')
+      div(class='col-md-12')
+        button(type='submit' class='btn btn-primary') Create
+
+block append scripts
+  script(src='/static/js/models/ticket.js')
+  script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
+  script(src='/static/js/views/ticket.js')
+      

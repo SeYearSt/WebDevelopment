@@ -43,5 +43,18 @@ app.get('/passenger/remove', function (request, response) {
   response.render('pages/passengerRemove', { title: 'Passenger Remove' })
 })
 
+app.get('/ticket', function (request, response) {
+  response.render('pages/ticket', { title: 'Ticket' })
+})
+app.get('/ticket/add', function (request, response) {
+  response.render('pages/ticketAdd', { title: 'Ticket Add' })
+})
+app.get('/ticket/edit', function (request, response) {
+  response.render('pages/ticketEdit', { title: 'Ticket Edit' })
+})
+app.get('/ticket/remove', function (request, response) {
+  response.render('pages/ticketRemove', { title: 'Ticket Remove' })
+})
+
 // запускаємо аплікацію
 app.listen(process.env.PORT || 8080)

@@ -1,7 +1,17 @@
 
-class Ticket{
-    constructor(train){
-        this.train = train
+class Ticket extends BaseModel{
+    constructor(){
+        super("tickets")
+        this.fields = this.fields.concat(["passengerName", "trainId"])
     }
+
+    removeTicket(){
+
+    }
+
+    editTicket(){
+
+    }
+
 }
 
