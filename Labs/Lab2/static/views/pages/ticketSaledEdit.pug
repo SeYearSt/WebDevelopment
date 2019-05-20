@@ -5,15 +5,33 @@ block prepend styles
 
 block content
   div(class='breadcrumb')
-    a(href='/passenger/add') PassengerAdd  
-    a(href='/passenger/edit') PassengerEdit  
-    a(href='/passenger/remove') PassengerRemove  
+    a(href='/ticket/add') Ticket Add  
+    a(href='/ticket/edit') Ticket Edit  
+    a(href='/ticket/remove') Ticket Remove  
   
-  form(id='passenger-add-form' name='passenger-add-form' class='form-inline' action='')
-    div.list-wrapper
-      table(id='passenger-list')
+  form(id='ticket-edit-form' name='ticket-edit-form' class='form-inline' action='')
+    div(class="form-group")
+      div(class="col-md-3")
+        label(for="Id") Id
+      div(class="col-md-9")
+        input(id="Id" name="Id" value="" class="form-control")
+    div(class="form-group")
+      div(class="col-md-3")
+        label(for="trainId") Train Id
+      div(class="col-md-9")
+        input(id="trainId" name="trainId" value="" class="form-control")
+    div(class="form-group")
+      div(class="col-md-3")
+        label(for="passengerName") Passenger Name
+      div(class="col-md-9")
+        input(id="passengerName" name="passengerName" value="" class="form-control")
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Edit
+          
 block append scripts
-  script(src='/static/js/models/passenger.js')
+  script(src='/static/js/models/ticket.js')
+  script(src='/static/js/models/ticketSaled.js')
   script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
-  script(src='/static/js/views/passenger.js')
+  script(src='/static/js/views/ticketSaled.js')
       
