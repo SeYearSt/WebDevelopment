@@ -16,4 +16,8 @@ block content
         tr
           td #{passanger.name}
           td #{passanger.surname}
-          td #{passanger.Id}
+          td #{passanger._id}
+          td 
+            a(href=`/passanger/edit/${passanger._id}` class="btn btn-warning") Edit
+          td           
+            a(href=`/passanger/delete/${passanger._id}` class='btn btn-danger') Delete

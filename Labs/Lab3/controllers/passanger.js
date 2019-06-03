@@ -4,16 +4,8 @@ const { body, validationResult } = require('express-validator/check')
 const { sanitizeBody } = require('express-validator/filter')
 
 const passangerListService = require('../services/passanger.all')
+const passangerFindService = require('../services/passanger.byId')
 const passangerCreateService = require('./../services/passanger.create')
-
-function _getMockProduct (id = null) {
-  return {
-    id: 33,
-    name: 'Prod1',
-    weight: 1,
-    volume: 5
-  }
-}
 
 module.exports = {
   index (req, res) {
@@ -65,12 +57,12 @@ module.exports = {
         })
       }
     }
-  ]
-  // updateProductForm (req, res) {
-  //   const mockProduct = _getMockProduct(req.body.id)
-
-  //   res.render('pages/product/update', { product: mockProduct })
-  // },
+  ],
+  updatePassangerForm (req, res) {
+    passangerFindService(req.params.id).then(passenger => {
+      res.render('pages/passanger/update', {passenger: passenger})
+    })
+  }
   // putUpdateProduct (req, res) {
   //   const success = true
   //   const productData = req.body
