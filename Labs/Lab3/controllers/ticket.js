@@ -3,6 +3,8 @@
 const { body, validationResult } = require('express-validator/check')
 const { sanitizeBody } = require('express-validator/filter')
 
+const passengerListService = require('../services/passenger.all')
+const trainListService = require('../services/train.all')
 const ticketListService = require('../services/ticket.all')
 // const trainFindService = require('../services/train.byId')
 // const trainCreateService = require('../services/train.create')
@@ -18,8 +20,11 @@ module.exports = {
         res.render('pages/ticket/list', {tickets: ticketCollection})
     },
 
-    addTicketForm(req, res){
-        res.render('pages/ticket/add')
+    async addTicketForm(req, res){
+      const passengerCollection = await passengerListService();
+      const trainCollection = await trainListService();
+      console.log(passengerCollection)
+      res.render('pages/ticket/add', {price: 100, passengers: passengerCollection, trains: trainCollection, places: 3})
 
     },
 
