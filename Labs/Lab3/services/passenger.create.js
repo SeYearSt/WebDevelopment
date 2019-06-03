@@ -1,20 +1,20 @@
-const Passanger = require('./../models/passanger')
+const passenger = require('./../models/passenger')
 
 /**
  * @param {Object} data
  */
 module.exports = function (data) {
-  const passanger = new Passanger({
+  const passengerNew = new passenger({
     name: data.name,
     surname: data.surname
   })
 
   return new Promise((resolve, reject) => {
-    passanger.save(function (err, createdPassanger) {
+    passengerNew.save(function (err, createdpassenger) {
       if (err) {
         reject(err)
       } else {
-        resolve(createdPassanger)
+        resolve(createdpassenger)
       }
     })
   })

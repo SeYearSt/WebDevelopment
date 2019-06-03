@@ -1,0 +1,19 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='passenger-type-edit-form' name='passenger-type-edit-form' class='form-horizontal' method="POST" action='')
+      input(id='id' name='id' value=$fn.getPropOrDefault(passenger, 'id', passenger._id) type='hidden')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='name') Name
+        div(class='col-md-9')
+          input(id='name' name='name' value=$fn.getPropOrDefault(passenger, 'name', passenger.name) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='code') Surname
+        div(class='col-md-9')
+          input(id='surname' name='surname' value=$fn.getPropOrDefault(passenger, 'surname', passenger.surname) class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update

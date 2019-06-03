@@ -14,10 +14,7 @@ const notFoundMiddleware = require('./middlewares/not_found')
 const errorMiddleware = require('./middlewares/error')
 
 const indexRoutes = require('./routes')
-const passengerRoutes = require('./routes/passanger')
-const productRoutes = require('./routes/product')
-const locationRoutes = require('./routes/location')
-const locationTypeRoutes = require('./routes/location_type')
+const passengerRoutes = require('./routes/passenger')
 
 const app = express()
 
@@ -41,10 +38,7 @@ app.use(express.static(__dirname))
 app.use(appLocalsStringsMiddleware)
 
 app.use('/', indexRoutes)
-app.use('/passanger', passengerRoutes)
-app.use('/product', productRoutes)
-app.use('/location', locationRoutes)
-app.use('/location-type', locationTypeRoutes)
+app.use('/passenger', passengerRoutes)
 
 app.use(notFoundMiddleware)
 app.use(errorMiddleware)

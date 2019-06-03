@@ -1,0 +1,23 @@
+extends ../../layout
+
+block content
+  h3 passenger List
+
+  a(href='/passenger/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th Name
+        th Surname
+        th Id
+    tbody
+      each passenger in passengers
+        tr
+          td #{passenger.name}
+          td #{passenger.surname}
+          td #{passenger._id}
+          td 
+            a(href=`/passenger/edit/${passenger._id}` class="btn btn-warning") Edit
+          td           
+            a(href=`/passenger/remove/${passenger._id}` class='btn btn-danger') Delete
