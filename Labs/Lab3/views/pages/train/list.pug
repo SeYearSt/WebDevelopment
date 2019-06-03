@@ -1,0 +1,25 @@
+extends ../../layout
+
+block content
+  h3 Train List
+
+  a(href='/train/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th Name
+        th Route
+        th Id
+        th Volume
+    tbody
+      each train in trains
+        tr
+          td #{train.name}
+          td #{train.route}
+          td #{train._id}
+          td #{train.volume}
+          td 
+            a(href=`/train/edit/${train._id}` class="btn btn-warning") Edit
+          td           
+            a(href=`/train/remove/${train._id}` class='btn btn-danger') Delete
