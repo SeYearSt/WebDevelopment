@@ -4,7 +4,9 @@ const { body, validationResult } = require('express-validator/check')
 const { sanitizeBody } = require('express-validator/filter')
 
 const trainListService = require('../services/train.all')
+const trainFindService = require('../services/train.byId')
 const trainCreateService = require('../services/train.create')
+const trainRemoveService = require('../services/train.remove.js')
 
 module.exports = {
     index(req, res){
@@ -54,11 +56,25 @@ module.exports = {
         }
     ],
 
-    trainRemoveForm(req, res){
-
+    async trainRemove(req, res){
+        trainRemoveService(req.params.id);
+        res.redirect('/train/list');
     },
 
-    trainRemove(req, res){
+    async editTrainForm(req, res){
+        const trainObj = await trainFindService(req.params.id)
+        res.render('pages/train/update', {train: trainObj})
+    },
 
+    async editTrainPost(req, res){
+        const trainData = req.body
+        const train = await trainFindService(req.params.id)
+        console.log(train)
+        console.log(trainData)
+        train.name = trainData.name
+        train.route = trainData.route
+        train.volume = trainData.volume
+        train.save()
+        res.redirect('/train/list');
     }
 }

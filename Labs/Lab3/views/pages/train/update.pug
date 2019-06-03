@@ -1,0 +1,24 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='train-type-edit-form' name='train-type-edit-form' class='form-horizontal' method="POST" action='')
+      input(id='id' name='id' value=$fn.getPropOrDefault(train, 'id', train._id) type='hidden')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='name') Name
+        div(class='col-md-9')
+          input(id='name' name='name' value=$fn.getPropOrDefault(train, 'name', train.name) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='code') Route
+        div(class='col-md-9')
+          input(id='route' name='route' value=$fn.getPropOrDefault(train, 'route', train.route) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='code') Volume
+        div(class='col-md-9')
+          input(id='volume' name='volume' value=$fn.getPropOrDefault(train, 'volume', train.volume) class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update
