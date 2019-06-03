@@ -1,0 +1,38 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='ticket-add-form' name='ticket-add-form' class='form-horizontal' method="POST" action='')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='ticketId') ticketId
+        div(class='col-md-9')
+          input(id='ticketId' name='ticketId' value=$fn.getPropOrDefault(newticket, 'id') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='route') price
+        div(class='col-md-9')
+          input(id='price' name='price' value=$fn.getPropOrDefault(newticket, 'price') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='route') Passenger
+        div(class='col-md-9')
+          input(id='passenger' name='passenger' value=$fn.getPropOrDefault(newticket, 'passenger') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='route') Train
+        div(class='col-md-9')
+          input(id='train' name='train' value=$fn.getPropOrDefault(newticket, 'train') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='route') place
+        div(class='col-md-9')
+          input(id='place' name='place' value=$fn.getPropOrDefault(newticket, 'place') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='route') date
+        div(class='col-md-9')
+          input(id='date' name='date' value=$fn.getPropOrDefault(newticket, 'date') class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Create

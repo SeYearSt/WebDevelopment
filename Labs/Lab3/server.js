@@ -16,6 +16,7 @@ const errorMiddleware = require('./middlewares/error')
 const indexRoutes = require('./routes')
 const passengerRoutes = require('./routes/passenger')
 const trainRoutes = require('./routes/train')
+const ticketRoutes = require('./routes/ticket')
 
 const app = express()
 
@@ -41,6 +42,7 @@ app.use(appLocalsStringsMiddleware)
 app.use('/', indexRoutes)
 app.use('/passenger', passengerRoutes)
 app.use('/train', trainRoutes)
+app.use('/ticket', ticketRoutes)
 
 app.use(notFoundMiddleware)
 app.use(errorMiddleware)
