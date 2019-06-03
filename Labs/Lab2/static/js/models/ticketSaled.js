@@ -1,7 +1,5 @@
-class SaledTicket extends BaseModle{
+class TicketSaled extends Ticket{
     constructor(){
         super('ticketSaled')
-        this.fields = this.fields.concat(["passengerName", "trainId"])
     }
-
 }

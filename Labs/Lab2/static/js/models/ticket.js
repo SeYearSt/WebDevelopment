@@ -1,4 +1,3 @@
-
 class Ticket extends BaseModel{
     constructor(collectionName){
         super(collectionName)
@@ -24,4 +23,3 @@ class Ticket extends BaseModel{
     }
 
 }
-

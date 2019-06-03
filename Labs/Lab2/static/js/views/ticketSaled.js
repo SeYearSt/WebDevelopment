@@ -1,6 +1,6 @@
 'use strict'
 
-const ticketModel = new Ticket("ticket") // eslint-disable-line no-undef
+const ticketModel = new TicketSaled("ticketsSaled") // eslint-disable-line no-undef
 
 function initAddForm () {
   const form = window.document.querySelector('#ticket-add-form')
@@ -18,7 +18,7 @@ function initAddForm () {
   
       e.target.reset()
   
-      window.location.replace("/ticket")
+      window.location.replace("/ticket/saled")
     })
   }  
 }
@@ -38,7 +38,7 @@ function initEditForm () {
 
       ticketModel.editTicket(parseInt(ticket.Id), ticket.passengerName, ticket.trainId)
 
-      window.location.replace("/ticket")
+      window.location.replace("/ticket/saled")
       })
   }
 }
@@ -60,7 +60,7 @@ function initRemoveForm () {
         ticketModel.removeTicket(parseInt(ticket.id))
       }
 
-      window.location.replace("/ticket")
+      window.location.replace("/ticket/saled")
     })
   }
 }
