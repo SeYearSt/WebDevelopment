@@ -1,0 +1,19 @@
+extends ../../layout
+
+block content
+  h3 Passanger List
+
+  a(href='/passanger/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th Name
+        th Surname
+        th Id
+    tbody
+      each passanger in passangers
+        tr
+          td #{passanger.name}
+          td #{passanger.surname}
+          td #{passanger.Id}
