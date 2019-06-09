@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 
 import {
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Label, Bar, BarChart, LabelList
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Label, Bar, BarChart, LabelList, PieChart, Pie, Sector, Cell
 } from 'recharts';
 
 const data = [
@@ -58,10 +58,4 @@ export const SmallSquareCard = ({isTop, color, name, colorFg, colorBg}) => (
   <Area type="monotone" dataKey="uv" stroke={colorFg} fill={colorFg} />
   <Area type="monotone" dataKey="pv" stroke={colorBg} fill={colorBg} />
 </AreaChart>
-);
-
-export const BigSquareCard = ({ src }) => (
-  <div style={ { width: 460, height: 420, backgroundColor: 'white', margin: 10 } }>
-    <img src={src} style={{ width: '100%', height: '100%' }} />
-  </div>
 );

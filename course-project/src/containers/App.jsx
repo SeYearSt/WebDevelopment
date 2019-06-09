@@ -7,11 +7,12 @@ import { SmallCard, SmallSquareCard, BigSquareCard } from '../components/Card';
 import { UserCard } from '../components/User';
 import { ProductVisitors } from '../components/ProductVisitors';
 import { CustomerRating } from '../components/CustomerRating';
+import { WebsiteTraffic } from '../components/WebsiteTraffic';
+
 
 import card2 from '../resources/images/card2.png';
 import card3 from '../resources/images/card3.png';
-import card4 from '../resources/images/card4.png';
-import card5 from '../resources/images/card5.png';
+import refresh from '../resources/images/refresh.png';
 
 const App = () => {
   const [menuOpen, setMenuOpen] = React.useState(true);
@@ -81,7 +82,9 @@ const App = () => {
             </div>
             </div>
             <div style={ { display: 'flex' } }>
-              <BigSquareCard/>
+              <WebsiteTraffic 
+              icon={refresh}
+              />
               <UserCard />
             </div>
             <div style={ { width: 940, height: 270, backgroundColor: 'white', margin: 10 } }>
